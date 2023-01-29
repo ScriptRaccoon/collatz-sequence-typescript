@@ -27,5 +27,5 @@ function test() {
 test();
 
 // the following is *not* OK when strict = true
-let x = 10;
+let x = 20;
 x = null;
