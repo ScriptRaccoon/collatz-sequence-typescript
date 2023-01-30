@@ -14,12 +14,12 @@ function collatz_simulation(n: number): number[] {
 	return arr;
 }
 
-function convert_to_arrow_string(arr: number[]): string {
+function convert_to_arrow_string(arr: string[]): string {
 	return arr.join(" -> ");
 }
 
 function test() {
-	const arr = collatz_simulation(20301);
+	const arr = collatz_simulation(20301).map((n) => n.toString());
 	const str = convert_to_arrow_string(arr);
 	console.log(`Sequence of length ${arr.length}:\n`, str);
 }
@@ -27,5 +27,5 @@ function test() {
 test();
 
 // the following is *not* OK when strict = true
-let x = 20;
-x = null;
+// let x = 20;
+// x = null;
