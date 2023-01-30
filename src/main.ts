@@ -18,13 +18,15 @@ function convert_to_arrow_string(arr: string[]): string {
 	return arr.join(" -> ");
 }
 
-function test() {
-	const arr = collatz_simulation(20301).map((n) => n.toString());
+function verify_collatz_conjecture(n: number) {
+	console.log(`Verify Collatz Conjecture for ${n}...\n`);
+	const arr = collatz_simulation(n).map((n) => n.toString());
 	const str = convert_to_arrow_string(arr);
-	console.log(`Sequence of length ${arr.length}:\n`, str);
+	console.log(`Sequence has length ${arr.length}:\n`);
+	console.log(str);
 }
 
-test();
+verify_collatz_conjecture(1234);
 
 // the following is *not* OK when strict = true
 // let x = 20;
