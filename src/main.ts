@@ -3,7 +3,7 @@ function collatz(n: number): number {
 	return 3 * n + 1;
 }
 
-function collatz_simulation(n: number): number[] {
+function collatz_sequence(n: number): number[] {
 	let arr = [n];
 	let next = n;
 	while (next > 1) {
@@ -20,13 +20,13 @@ function convert_to_arrow_string(arr: string[]): string {
 
 function verify_collatz_conjecture(n: number) {
 	console.log(`Verify Collatz Conjecture for ${n}...\n`);
-	const arr = collatz_simulation(n).map((n) => n.toString());
+	const arr = collatz_sequence(n).map((n) => n.toString());
 	const str = convert_to_arrow_string(arr);
 	console.log(`Sequence has length ${arr.length}:\n`);
 	console.log(str);
 }
 
-verify_collatz_conjecture(1234);
+verify_collatz_conjecture(12);
 
 // the following is *not* OK when strict = true
 // let x = 20;
